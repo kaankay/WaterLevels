@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStationExportModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <StationExportModel>
+    <uuid>47174d8f-1b8e-4599-8a59-b580dd55bc87</uuid>
+    <number>48900237</number>
+    <shortname>EITZE</shortname>
+    <longname>EITZE</longname>
+    <km>9.56</km>
+    <agency>VERDEN</agency>
+    <longitude>9.276769435375872</longitude>
+    <latitude>52.90406544743417</latitude>
+    <water>
+      <shortname>ALLER</shortname>
+      <longname>ALLER</longname>
+    </water>
+    <timeseries>
+      <shortname>W</shortname>
+      <longname>WASSERSTAND ROHDATEN</longname>
+      <unit>cm</unit>
+      <equidistance>15</equidistance>
+      <currentMeasurement>
+        <timestamp>2023-07-25T14:00:00</timestamp>
+        <value>233</value>
+        <stateMnwMhw>low</stateMnwMhw>
+        <stateNswHsw>unknown</stateNswHsw>
+      </currentMeasurement>
+      <gaugeZero>
+        <unit>m. ü. NN</unit>
+        <value>8</value>
+        <validFrom>1985-03-13</validFrom>
+      </gaugeZero>
+    </timeseries>
+  </StationExportModel>
+  <StationExportModel>
+    <uuid>5aaed954-de4e-4528-8f65-f3f530bc8325</uuid>
+    <number>48900204</number>
+    <shortname>RETHEM</shortname>
+    <longname>RETHEM</longname>
+    <km>34.22</km>
+    <agency>VERDEN</agency>
+    <longitude>9.382840810129355</longitude>
+    <latitude>52.789097592149574</latitude>
+    <water>
+      <shortname>ALLER</shortname>
+      <longname>ALLER</longname>
+    </water>
+    <timeseries>
+      <shortname>W</shortname>
+      <longname>WASSERSTAND ROHDATEN</longname>
+      <unit>cm</unit>
+      <equidistance>15</equidistance>
+      <currentMeasurement>
+        <timestamp>2023-07-25T14:00:00</timestamp>
+        <value>50</value>
+        <stateMnwMhw>low</stateMnwMhw>
+        <stateNswHsw>normal</stateNswHsw>
+      </currentMeasurement>
+      <gaugeZero>
+        <unit>m. ü. NN</unit>
+        <value>14.31</value>
+        <validFrom>1954-01-01</validFrom>
+      </gaugeZero>
+    </timeseries>
+  </StationExportModel>
+  <StationExportModel>
+    <uuid>b475386c-30cc-453a-b3b7-1d17ace13595</uuid>
+    <number>48300105</number>
+    <shortname>CELLE</shortname>
+    <longname>CELLE</longname>
+    <km>111.55</km>
+    <agency>VERDEN</agency>
+    <longitude>10.062164093638698</longitude>
+    <latitude>52.62270553213209</latitude>
+    <water>
+      <shortname>ALLER</shortname>
+      <longname>ALLER</longname>
+    </water>
+    <timeseries>
+      <shortname>W</shortname>
+      <longname>WASSERSTAND ROHDATEN</longname>
+      <unit>cm</unit>
+      <equidistance>15</equidistance>
+      <currentMeasurement>
+        <timestamp>2023-07-25T14:00:00</timestamp>
+        <value>124</value>
+        <stateMnwMhw>normal</stateMnwMhw>
+        <stateNswHsw>normal</stateNswHsw>
+      </currentMeasurement>
+      <gaugeZero>
+        <unit>m. ü. NN</unit>
+        <value>31.82</value>
+        <validFrom>1936-11-01</validFrom>
+      </gaugeZero>
+    </timeseries>
+  </StationExportModel>
+</ArrayOfStationExportModel>

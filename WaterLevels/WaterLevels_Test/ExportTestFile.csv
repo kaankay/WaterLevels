@@ -1,0 +1,4 @@
+﻿id; number; shortname; longname; km; agency; latitude; longitude; water longname; water shortname; short desc; long desc; unit; equidistance(min); timestamp; value; statemnwmhw; statenswhsw; unit of level zero(m); Height(decimal); valid from 
+47174d8f-1b8e-4599-8a59-b580dd55bc87;48900237;EITZE;EITZE;9.56;VERDEN;52.90406544743417;9.276769435375872;ALLER;ALLER;W;WASSERSTAND ROHDATEN;cm;15;7/25/2023 2:00:00 PM;233;low;unknown;m. ü. NN;8;1985-03-13
+5aaed954-de4e-4528-8f65-f3f530bc8325;48900204;RETHEM;RETHEM;34.22;VERDEN;52.789097592149574;9.382840810129355;ALLER;ALLER;W;WASSERSTAND ROHDATEN;cm;15;7/25/2023 2:00:00 PM;50;low;normal;m. ü. NN;14.31;1954-01-01
+b475386c-30cc-453a-b3b7-1d17ace13595;48300105;CELLE;CELLE;111.55;VERDEN;52.62270553213209;10.062164093638698;ALLER;ALLER;W;WASSERSTAND ROHDATEN;cm;15;7/25/2023 2:00:00 PM;124;normal;normal;m. ü. NN;31.82;1936-11-01

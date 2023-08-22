@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xsd:element name="ArrayOfStationExportModel">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" name="StationExportModel">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="uuid" type="xsd:string" />
+							<xsd:element name="number" type="xsd:unsignedInt" />
+							<xsd:element name="shortname" type="xsd:string" />
+							<xsd:element name="longname" type="xsd:string" />
+							<xsd:element name="km" type="xsd:decimal" />
+							<xsd:element name="agency" type="xsd:string" />
+							<xsd:element name="longitude" type="xsd:decimal" />
+							<xsd:element name="latitude" type="xsd:decimal" />
+							<xsd:element name="water">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="shortname" type="xsd:string" />
+										<xsd:element name="longname" type="xsd:string" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="timeseries">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="shortname" type="xsd:string" />
+										<xsd:element name="longname" type="xsd:string" />
+										<xsd:element name="unit" type="xsd:string" />
+										<xsd:element name="equidistance" type="xsd:unsignedByte" />
+										<xsd:element name="currentMeasurement">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="timestamp" type="xsd:dateTime" />
+													<xsd:element name="value" type="xsd:unsignedByte" />
+													<xsd:element name="stateMnwMhw" type="xsd:string" />
+													<xsd:element name="stateNswHsw" type="xsd:string" />
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="gaugeZero">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="unit" type="xsd:string" />
+													<xsd:element name="value" type="xsd:decimal" />
+													<xsd:element name="validFrom" type="xsd:string" />
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xs:schema>

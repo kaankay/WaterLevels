@@ -1,0 +1,103 @@
+﻿<Window x:Class="WaterLevels.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WaterLevels"
+        mc:Ignorable="d"
+        Title="Waterinfo" Height="880" Width="1440" WindowStartupLocation="CenterScreen" Background="#FF022F40" FontStyle="Italic" FontWeight="Bold">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="630"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+
+        <!-- Mapsource: https://de.wikipedia.org/wiki/Datei:Karte_Deutschland.svg /-->
+        <Image Source="/images/Deutschlandkarte.png" Stretch="Fill" Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="4" x:Name="myMap"/>
+        <Canvas Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="4" Width="400" Height="630" x:Name="myCanvas" Background="Transparent"/>
+
+        <DataGrid Margin="0,0,0,0" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="6" x:Name="dg_waterData" Background="#FFFFC09F" SelectionChanged="DataGridClick">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}" >
+                    <Setter Property="Background" Value="#FFCFD6CE"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style >
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="txtColID" Header="ID" Binding="{Binding uuid}" Visibility="Visible"/>
+                <DataGridTextColumn Header="Number" Binding="{Binding number}"/>
+                <DataGridTextColumn Header="Shortname" Binding="{Binding shortname}"/>
+                <DataGridTextColumn Header="Longname" Binding="{Binding longname}"/>
+                <DataGridTextColumn Header="Km" Binding="{Binding km}"/>
+                <DataGridTextColumn Header="Agency" Binding="{Binding agency}"/>
+                <DataGridTextColumn Header="Longitude" Binding="{Binding longitude}"/>
+                <DataGridTextColumn Header="Latitude" Binding="{Binding latitude}"/>
+                <DataGridTextColumn Header="WaterLongname" Binding="{Binding water.longname}"/>
+                <DataGridTextColumn Header="WaterShortname" Binding="{Binding water.shortname}"/>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid Margin="0,0,5,0" Grid.Column="7" Grid.Row="3" Grid.ColumnSpan="11" x:Name="dg_timeSeries" Background="#FFFFC09F">
+            <DataGrid.Resources >
+                <Style TargetType="{x:Type DataGridColumnHeader}" >
+                    <Setter Property="Background" Value="#FFCFD6CE"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style >
+            </DataGrid.Resources >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header = "ShortDesc" Binding = "{Binding shortname}" />
+                <DataGridTextColumn Header = "LongDesc" Binding = "{Binding longname}" />
+                <DataGridTextColumn Header = "Unit" Binding = "{Binding unit}" />
+                <DataGridTextColumn Header = "Equidistance(min)" Binding = "{Binding equidistance}" />
+                <DataGridTextColumn Header = "Timestamp" Binding = "{Binding currentMeasurement.timestamp}" />
+                <DataGridTextColumn Header = "Value" Binding = "{Binding currentMeasurement.value}" />
+                <DataGridTextColumn Header = "StateMnwMhw" Binding = "{Binding currentMeasurement.stateMnwMhw}" />
+                <DataGridTextColumn Header = "StateNswHsw" Binding = "{Binding currentMeasurement.stateNswHsw}" />
+                <DataGridTextColumn Header = "UnitofLevelZero(m)" Binding = "{Binding gaugeZero.unit}" />
+                <DataGridTextColumn Header = "Height(decimal)" Binding = "{Binding gaugeZero.value}" />
+                <DataGridTextColumn Header = "ValidFrom" Binding = "{Binding gaugeZero.validFrom}" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button Height="20" Margin="5,5,5,5" x:Name="bt_add" Content="Add" Grid.Column="1" Grid.Row="1" Click="bt_add_Click" Background="#FFFFD07B" ></Button>
+        <Button Height="20" Margin="5,5,5,5" x:Name="bt_edit" Content="Edit" Grid.Column="3" Grid.Row="1" Click="bt_edit_Click" Background="#FFFFD07B" ></Button>
+        <Button Margin="5,5,5,5" x:Name="bt_export_csv" Content="Export to CSV" Grid.Column="10" Grid.Row="1" Background="#FFFFD07B" Click="bt_export_csv_Click" ></Button>
+        <Button Margin="5,5,5,5" x:Name="bt_export_xml" Content="Export to XML" Grid.Column="9" Grid.Row="1" Background="#FFFFD07B" Click="bt_export_xml_Click" ></Button>
+        <Button Margin="5,5,5,5" x:Name="bt_delete" Content="Delete" Grid.Column="2" Grid.Row="1" Background="#FFFFD07B" Click="bt_delete_Click"></Button>
+        <Button Margin="5,5,5,5" x:Name="bt_import_csv" Content="Import as CSV" Grid.Column="12" Grid.Row="1" Click="bt_import_csv_Click" Background="#FFFFD07B" ></Button>
+        <Button Margin="5,5,5,5" x:Name="bt_import_xml" Content="Import as XML" Grid.Column="11" Grid.Row="1" Click="bt_import_xml_Click" Background="#FFFFD07B" ></Button>
+        <Button Margin="5,5,5,5"  x:Name="bt_filter" Content="Search" Grid.Column="7" Grid.Row="1" Click="bt_filter_Click" Background="#FFFFD07B" />
+        <TextBox x:Name="txtblock_Search" Grid.Column="5" HorizontalAlignment="Left" Margin="5,5,5,5" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="190" Grid.ColumnSpan="2"/>
+        <Label Content="Search" Margin="20,0,0,0" Grid.Column="4" Grid.Row="1" FontSize="16" Foreground="#FFFDB833"/>
+        <Button Margin="5,5,5,5"  x:Name="bt_Sort" Content="Sort" Grid.Column="8" Grid.Row="1" Click="bt_Sort_Click" Background="#FFFFD07B" />
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="Um Stationen aus der API zu bearbeiten, hinzuzufügen oder zu löschen klicken sie auf die Karte. Wählen sie danach das gewünschte Element in der Tabelle unten aus. 
+                                                Um Datensätze den Stationen beizufügen Klicken sie unten in der Tabelle auf eine Station um diese auszuwählen. Wenn sie keine Station ausgewählt haben und ''Add'' drücken können sie eine eigene Station hinzufügen. 
+                                                            Es werden immer nur die Datensätze der aktuell ausgewählten Station angezeigt." VerticalAlignment="Top" Height="274" Width="285" Margin="10,10,0,0" Grid.ColumnSpan="3" Foreground="White"/>
+    </Grid>
+</Window>

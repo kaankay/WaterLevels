@@ -1,0 +1,52 @@
+﻿<Window x:Class="WaterLevels.EditDataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WaterLevels"
+        mc:Ignorable="d"
+        Title="EditDataWindow" Height="450" Width="1011">
+    <Grid Margin="25,0,0,0" HorizontalAlignment="Left" Width="986">
+        <!--<DataGrid x:Name="stationsDataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Height="248" VerticalAlignment="Bottom" Margin="10,0,477,10" SelectionMode="Extended"/>-->
+        <DataGrid Name="dg_Stations" Margin="18,180,482,10" Foreground="Black" Background="{x:Null}" BorderBrush="#FFABADB3" AutoGenerateColumns="False" GridLinesVisibility="All" VerticalGridLinesBrush="#FFABADB3" HorizontalGridLinesBrush="#FFABADB3" HeadersVisibility="Column" IsReadOnly="True" RowBackground="White" MinColumnWidth="65" SelectionMode="Single" SelectionChanged="dg_Stations_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Number" Binding="{Binding number}" Foreground="Black"/>
+                <DataGridTextColumn Header="Shortname" Binding="{Binding shortname}" Foreground="Black"/>
+                <DataGridTextColumn Header="Longname" Binding="{Binding longname}" Foreground="Black"/>
+                <DataGridTextColumn Header="Km" Binding="{Binding km}" Foreground="Black"/>
+                <DataGridTextColumn Header="Agency" Binding="{Binding agency}" Foreground="Black"/>
+                <DataGridTextColumn Header="Latitude" Binding="{Binding latitude}" Foreground="Black"/>
+                <DataGridTextColumn Header="Longitude" Binding="{Binding longitude}" Foreground="Black"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dg_StationsHistory" Margin="540,180,175,10" Foreground="Black" Background="{x:Null}" BorderBrush="#FFABADB3" AutoGenerateColumns="False" GridLinesVisibility="All" VerticalGridLinesBrush="#FFABADB3" HorizontalGridLinesBrush="#FFABADB3" HeadersVisibility="Column" IsReadOnly="True" RowBackground="#FF2D2D30" MinColumnWidth="65" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="history" Binding="{Binding UpdatedDateTime}" Foreground="White"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--<Button Content="Button" HorizontalAlignment="Left" Margin="879,282,0,0" VerticalAlignment="Top"/>-->
+        <Button Name="btn_Save" Content="Save" HorizontalAlignment="Left" Height="40" Margin="837,181,0,0" VerticalAlignment="Top" Width="126" FontWeight="Bold" Click="btn_Save_Click" RenderTransformOrigin="0.797,-3.407"/>
+        <Button Name="btn_Revert" Content="Revert to Selection" HorizontalAlignment="Left" Height="40" Margin="837,255,0,0" VerticalAlignment="Top" Width="127" FontWeight="Bold" Click="btn_Revert_Click"/>
+        <Button Name="btn_Close" Content="Close" HorizontalAlignment="Left" Height="40" Margin="835,327,0,0" VerticalAlignment="Top" Width="127" FontWeight="Bold" Click="btn_Close_Click"/>
+        <Label Content="All Stations" HorizontalAlignment="Left" Margin="22,150,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" />
+        <Label Content="Selected Station History" HorizontalAlignment="Left" Margin="546,150,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" />
+        <Label Content="Latitude:" HorizontalAlignment="Left" Margin="24,104,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" RenderTransformOrigin="0.481,2.621" />
+        <Label Content="Longitude:" HorizontalAlignment="Left" Margin="300,106,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" />
+        <Label Content="Km:" HorizontalAlignment="Left" Margin="25,57,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" />
+        <!--<TextBlock x:Name="txtblock_Lat" VerticalAlignment="Top" Padding="2" Height="20" Margin="108,25,599,0" TextWrapping="Wrap" Foreground="Black" FontWeight="Bold"/>
+        <TextBlock x:Name="txtblock_Address" VerticalAlignment="Top" Padding="2" Height="20" Margin="106,73,601,0" TextWrapping="Wrap" Foreground="Black" FontWeight="Bold"/>
+        <TextBlock x:Name="txtblock_Lng" VerticalAlignment="Top" Padding="2" Height="20" Margin="548,25,159,0" TextWrapping="Wrap" Foreground="Black" FontWeight="Bold"/>-->
+        <TextBox x:Name="txtblock_Lat" x:FieldModifier="public" VerticalAlignment="Top" Padding="2" Height="20" Margin="86,106,697,0" TextWrapping="Wrap" Foreground="Black" FontWeight="Bold" RenderTransformOrigin="0.499,4.072"/>
+        <TextBox x:Name="txtblock_Km" x:FieldModifier="public" VerticalAlignment="Top" Padding="2" Height="20" Margin="86,65,695,0" TextWrapping="Wrap" Foreground="Black" FontWeight="Bold"/>
+        <TextBox x:Name="txtblock_Lng" x:FieldModifier="public" VerticalAlignment="Top" Padding="2" Height="20" Margin="382,109,389,0" TextWrapping="Wrap" Foreground="Black" FontWeight="Bold"/>
+        <TextBox x:Name="txtblock_Agency" x:FieldModifier="public" VerticalAlignment="Top" Padding="2" Height="20" Margin="382,65,389,0" TextWrapping="Wrap" Foreground="Black" FontWeight="Bold"/>
+        <Label Content="Agency:" HorizontalAlignment="Left" Margin="313,57,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" Width="58" />
+        <Label Content="Number:" HorizontalAlignment="Left" Margin="22,13,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" />
+        <TextBox x:Name="txtblock_Number" x:FieldModifier="public" VerticalAlignment="Top" Padding="2" Height="20" Margin="84,18,697,0" TextWrapping="Wrap" Foreground="Black" FontWeight="Bold"/>
+        <Label Content="Shortname:" HorizontalAlignment="Left" Margin="295,13,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" />
+        <TextBox x:Name="txtblock_Shortname" x:FieldModifier="public" VerticalAlignment="Top" Padding="2" Height="20" Margin="382,18,389,0" TextWrapping="Wrap" Foreground="Black" FontWeight="Bold"/>
+        <Label Content="Longname:"  HorizontalAlignment="Left" Margin="607,8,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" />
+        <TextBox x:Name="txtblock_Longname" x:FieldModifier="public" VerticalAlignment="Top" Padding="2" Height="21" Margin="680,13,84,0" TextWrapping="Wrap" Foreground="Black" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

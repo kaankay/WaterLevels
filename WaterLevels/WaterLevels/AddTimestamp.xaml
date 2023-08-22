@@ -1,0 +1,40 @@
+﻿<Window x:Class="WaterLevels.AddTimestamp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WaterLevels"
+        mc:Ignorable="d"
+        Title="AddTimestamp" Height="550" Width="450">
+    <Grid>
+        <TextBlock Margin="56,19,40,0" TextWrapping="Wrap" Text="Neue Messung" VerticalAlignment="Top" Height="35" FontSize="20" FontWeight="Bold" TextDecorations="Underline" TextAlignment="Center"/>
+        <TextBox Margin="250,60,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_shortname" x:FieldModifier="public"/>
+        <TextBox Margin="250,90,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_longname" x:FieldModifier="public"/>
+        <TextBox Margin="250,120,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_timeseriesUnit" x:FieldModifier="public"/>
+        <TextBox Margin="250,150,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_equidistance" x:FieldModifier="public"/>
+        <TextBox Margin="250,180,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_timestamp" x:FieldModifier="public"/>
+        <TextBox Margin="250,210,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_value" x:FieldModifier="public"/>
+        <TextBox Margin="250,240,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_stateMnwMhw" x:FieldModifier="public"/>
+        <TextBox Margin="250,270,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_stateNswHsw" x:FieldModifier="public"/>
+        <TextBox Margin="250,300,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_GaugeZeroUnit" x:FieldModifier="public"/>
+        <TextBox Margin="250,330,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_GaugeZeroValue" x:FieldModifier="public"/>
+        <TextBox Margin="250,360,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_GaugeZeroValidForm" x:FieldModifier="public"/>
+        <TextBox Margin="250,390,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_shortDescription" x:FieldModifier="public"/>
+        <TextBox Margin="250,420,80,0" TextWrapping="Wrap" VerticalAlignment="Top" Name="txb_longDescription" x:FieldModifier="public"/>
+        <TextBlock Margin="56,60,200,0" TextWrapping="Wrap" Text="Kurzform Name:" VerticalAlignment="Top"/>
+        <TextBlock Margin="56,90,200,0" TextWrapping="Wrap" Text="TVollständiger Name" VerticalAlignment="Top"/>
+        <TextBlock Margin="56,120,200,0" TextWrapping="Wrap" Text="Messeinheit:" VerticalAlignment="Top"/>
+        <TextBlock Margin="56,150,200,0" TextWrapping="Wrap" Text="Equidistanz:" VerticalAlignment="Top"/>
+        <TextBlock Margin="56,180,200,0" TextWrapping="Wrap" Text="Messzeit:" VerticalAlignment="Top"/>
+        <TextBlock Margin="56,210,200,0" TextWrapping="Wrap" Text="Messung:" VerticalAlignment="Top"/>
+        <TextBlock Margin="56,240,200,0" TextWrapping="Wrap" Text="Messung stateMnwMhw?:" VerticalAlignment="Top"/>
+        <TextBlock Margin="56,270,200,0" TextWrapping="Wrap" Text="Messung stateNswHsw?:" VerticalAlignment="Top"/>
+        <TextBlock Margin="56,300,200,0" TextWrapping="Wrap" Text="Gauge Zero Messeinheit:" VerticalAlignment="Top"/>
+        <TextBlock Margin="56,330,200,0" TextWrapping="Wrap" Text="Gauge Zero Messung:" VerticalAlignment="Top"/>
+        <TextBlock Margin="56,360,200,0" TextWrapping="Wrap" Text="Gauge Zero Validierung:" VerticalAlignment="Top"/>
+        <TextBlock Margin="56,390,200,0" TextWrapping="Wrap" Text="Zusammenfassung Kommentar:" VerticalAlignment="Top"/>
+        <TextBlock Margin="56,420,200,0" TextWrapping="Wrap" Text="Kompletter Kommentar:" VerticalAlignment="Top"/>
+        <Button Content="Hinzufügen" Margin="56,457,80,0" VerticalAlignment="Top" Click="AddStation"/>
+        <Button Content="Abbrechen" Margin="56,482,80,0" VerticalAlignment="Top" Click="CloseWindow"/>
+    </Grid>
+</Window>
